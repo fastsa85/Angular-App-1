@@ -1,5 +1,4 @@
 import { Component,  Input, Output, EventEmitter} from '@angular/core'
-import { ToastrService } from '../services/toastr.service';
 import { IEvent } from '../shared/event.model';
 
 @Component({
@@ -9,15 +8,14 @@ import { IEvent } from '../shared/event.model';
 })
 export class EventThumbnailComponent {
 
-    constructor(private toastr: ToastrService) { 
+    constructor() {
     }
 
     @Input() event: IEvent;
     @Output() eventClick = new EventEmitter();
 
-    handleClickMe() {        
+    handleClickMe() {
         this.eventClick.emit(this.event.name);
-        this.toastr.success(this.event.name)
     }
 
     getStartTimeClass() {

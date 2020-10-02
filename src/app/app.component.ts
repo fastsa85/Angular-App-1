@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AuthService } from './users/auth.service';
 
 @Component({
   selector: 'app-root',
@@ -6,5 +7,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'angular-fundamentals';
+
+  title = "angular-fundamentals"
+  constructor(private auth: AuthService){
+
+  }
+
+  ngOnInit(){
+    this.auth.checkAuthStatus();
+  }
 }

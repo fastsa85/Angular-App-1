@@ -1,1 +1,5 @@
 export * from './event.model'
+export * from './restricted-words.validator'
+export * from './duration.pipe'
+export * from './simple-modal/simple-modal.component'
+export * from './simple-modal/modal-trigger.directive'

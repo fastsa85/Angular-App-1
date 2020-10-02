@@ -3,7 +3,7 @@ import { EventService } from '../services/event.service';
 import { ActivatedRoute } from '@angular/router'
 import { IEvent } from '../shared/event.model';
 
-@Component({    
+@Component({
     templateUrl: './events-list.component.html'
 })
 export class EventsListComponent implements OnInit{
@@ -11,14 +11,10 @@ export class EventsListComponent implements OnInit{
     events: IEvent[];
 
     constructor(private eventService: EventService, private route: ActivatedRoute) {
-     
+
     }
 
-    handleEventClicked(data) {
-        console.log('received: ', data);
-    }
-
-   ngOnInit(){ 
-       this.eventService.getEvents().subscribe(events => this.events = events)      
+   ngOnInit(){
+       this.eventService.getEvents().subscribe(events => this.events = events)
    }
 }
